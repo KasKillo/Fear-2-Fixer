@@ -137,7 +137,7 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(103, 25);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "Version 2";
+            this.VersionLabel.Text = "Version 3";
             // 
             // GameDirectoryLabel
             // 
@@ -215,9 +215,11 @@
             this.Controls.Add(this.FovLabel);
             this.Controls.Add(this.FovInput);
             this.Controls.Add(this.BackgroundImage);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Fear 2 Fixer by KasKillo";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundImage)).EndInit();
