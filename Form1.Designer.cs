@@ -42,6 +42,9 @@
             this.MouseFixDownload = new System.Windows.Forms.Button();
             this.EnableMAFix = new System.Windows.Forms.Button();
             this.CreatorLabel = new System.Windows.Forms.LinkLabel();
+            this.IntroSkipArchiveDownload = new System.Windows.Forms.Button();
+            this.IntroSkipEnable = new System.Windows.Forms.Button();
+            this.labelIndicator = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,7 +140,7 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(103, 25);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "Version 3";
+            this.VersionLabel.Text = "Version 4";
             // 
             // GameDirectoryLabel
             // 
@@ -174,7 +177,7 @@
             // 
             // EnableMAFix
             // 
-            this.EnableMAFix.Location = new System.Drawing.Point(368, 405);
+            this.EnableMAFix.Location = new System.Drawing.Point(252, 363);
             this.EnableMAFix.Name = "EnableMAFix";
             this.EnableMAFix.Size = new System.Drawing.Size(110, 36);
             this.EnableMAFix.TabIndex = 12;
@@ -197,11 +200,47 @@
             this.CreatorLabel.Text = "Made By KasKillo";
             this.CreatorLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CreatorLabel_LinkClicked);
             // 
+            // IntroSkipArchiveDownload
+            // 
+            this.IntroSkipArchiveDownload.Location = new System.Drawing.Point(368, 405);
+            this.IntroSkipArchiveDownload.Name = "IntroSkipArchiveDownload";
+            this.IntroSkipArchiveDownload.Size = new System.Drawing.Size(110, 36);
+            this.IntroSkipArchiveDownload.TabIndex = 14;
+            this.IntroSkipArchiveDownload.Text = "Download Intro Skip";
+            this.IntroSkipArchiveDownload.UseVisualStyleBackColor = true;
+            this.IntroSkipArchiveDownload.Visible = false;
+            this.IntroSkipArchiveDownload.Click += new System.EventHandler(this.IntroSkipArchiveDownload_Click);
+            // 
+            // IntroSkipEnable
+            // 
+            this.IntroSkipEnable.Location = new System.Drawing.Point(368, 363);
+            this.IntroSkipEnable.Name = "IntroSkipEnable";
+            this.IntroSkipEnable.Size = new System.Drawing.Size(110, 36);
+            this.IntroSkipEnable.TabIndex = 15;
+            this.IntroSkipEnable.Text = "Enable Intro Skip";
+            this.IntroSkipEnable.UseVisualStyleBackColor = true;
+            this.IntroSkipEnable.Visible = false;
+            this.IntroSkipEnable.Click += new System.EventHandler(this.IntroSkipEnable_Click);
+            // 
+            // labelIndicator
+            // 
+            this.labelIndicator.AutoSize = true;
+            this.labelIndicator.BackColor = System.Drawing.Color.Transparent;
+            this.labelIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIndicator.Location = new System.Drawing.Point(561, 9);
+            this.labelIndicator.Name = "labelIndicator";
+            this.labelIndicator.Size = new System.Drawing.Size(227, 25);
+            this.labelIndicator.TabIndex = 16;
+            this.labelIndicator.Text = "Select Game Directory";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelIndicator);
+            this.Controls.Add(this.IntroSkipEnable);
+            this.Controls.Add(this.IntroSkipArchiveDownload);
             this.Controls.Add(this.CreatorLabel);
             this.Controls.Add(this.EnableMAFix);
             this.Controls.Add(this.MouseFixDownload);
@@ -242,6 +281,9 @@
         private System.Windows.Forms.Button MouseFixDownload;
         private System.Windows.Forms.Button EnableMAFix;
         private System.Windows.Forms.LinkLabel CreatorLabel;
+        private System.Windows.Forms.Button IntroSkipArchiveDownload;
+        private System.Windows.Forms.Button IntroSkipEnable;
+        private System.Windows.Forms.Label labelIndicator;
     }
 }
 

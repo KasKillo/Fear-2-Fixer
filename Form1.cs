@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.IO.Compression;
 using System.Net;
 
 
@@ -17,13 +18,33 @@ namespace Fear2Pc
     {
         string path = "";
         string MouseFixUrl = "https://download1495.mediafire.com/hdnat9tjz4yg/91xrtfdy9wcrnb0/X3DAudio1_5.dll";
-        WebClient client;
        
 
         public Form1()
         {
             InitializeComponent();
+            
             //string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            VersionLabel.Parent = BackgroundImage;
+            VersionLabel.ForeColor = Color.White;
+            GameDirectoryLabel.Parent = BackgroundImage;
+            GameDirectoryLabel.ForeColor = Color.White;
+            FovLabel.Parent = BackgroundImage;
+            FovLabel.ForeColor = Color.White;
+            WindowedLabel.Parent = BackgroundImage;
+            WindowedLabel.ForeColor = Color.White;
+            WYes.Parent = BackgroundImage;
+            WYes.ForeColor = Color.White;
+            WNo.Parent = BackgroundImage;
+            WNo.ForeColor = Color.White;
+            CreatorLabel.Parent = BackgroundImage;
+            CreatorLabel.ForeColor = Color.White;
+            labelIndicator.Parent = BackgroundImage;
+            labelIndicator.ForeColor = Color.White;
         }
 
         private void GDButton_Click(object sender, EventArgs e)
@@ -46,6 +67,9 @@ namespace Fear2Pc
                     MouseFixDownload.Visible = true;
                     EnableMAFix.Visible = true;
                     MouseFixDownload.Visible = true;
+                    IntroSkipArchiveDownload.Visible = true;
+                    IntroSkipEnable.Visible = true;
+                    labelIndicator.Text = "Select a fix";
                 }
 
                 Console.WriteLine(folderbrowserdialog.SelectedPath);
@@ -83,27 +107,20 @@ namespace Fear2Pc
             stream.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            VersionLabel.Parent = BackgroundImage;
-            VersionLabel.ForeColor = Color.White;
-            GameDirectoryLabel.Parent = BackgroundImage;
-            GameDirectoryLabel.ForeColor = Color.White;
-            FovLabel.Parent = BackgroundImage;
-            FovLabel.ForeColor = Color.White;
-            WindowedLabel.Parent = BackgroundImage;
-            WindowedLabel.ForeColor = Color.White;
-            WYes.Parent = BackgroundImage;
-            WYes.ForeColor = Color.White;
-            WNo.Parent = BackgroundImage;
-            WNo.ForeColor = Color.White;
-            CreatorLabel.Parent = BackgroundImage;
-            CreatorLabel.ForeColor = Color.White;
-        }
-
         private async void MouseFixDownload_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://download1495.mediafire.com/hdnat9tjz4yg/91xrtfdy9wcrnb0/X3DAudio1_5.dll");
+            var sourceDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\X3DAudio1_5.dll";
+            var sourceDownloads = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + "Downloads" + "\\X3DAudio1_5.dll";
+            if((!File.Exists(sourceDesktop)) && !File.Exists(sourceDownloads))
+            {
+                System.Diagnostics.Process.Start("https://download1495.mediafire.com/hdnat9tjz4yg/91xrtfdy9wcrnb0/X3DAudio1_5.dll");
+            }
+            else
+            {
+                labelIndicator.Text = "Mouse fix Available";
+            }
+
+            
         }
 
         private void EnableMAFix_Click(object sender, EventArgs e)
@@ -116,17 +133,88 @@ namespace Fear2Pc
            if(File.Exists(sourceDesktop))
            {
                 File.Move(sourceDesktop, destination);
-            }
-            else if(File.Exists(sourceDownloads))
-            {
+           }
+           else if(File.Exists(sourceDownloads))
+           {
                 File.Move(sourceDownloads, destination);
+           }
+
+            labelIndicator.Text = "Mouse Fix enabled";
+
+        }
+
+        private void IntroSkipArchiveDownload_Click(object sender, EventArgs e)
+        {
+            var sourceDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\videos.zip";
+            var sourceDownloads = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + "Downloads" + "\\videos.zip";
+
+            if(!File.Exists(sourceDesktop) && !File.Exists(sourceDownloads))
+            {
+                System.Diagnostics.Process.Start("https://download1488.mediafire.com/5tj4pf4fk6cg/0az8qrtjo0lf4wp/videos.zip");
+            }
+            else
+            {
+                labelIndicator.Text = "Intro Skip available";
+            }
+        }
+
+        private void IntroSkipEnable_Click(object sender, EventArgs e)
+        {
+            var sourceDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\videos.zip";
+            var sourceDownloads = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + "Downloads" + "\\videos.zip";
+            //var destination = Path.Combine(path + "\\X3DAudio1_5.dll");
+
+            
+
+            //check if original files still exists and deletes them
+            if (File.Exists(Path.Combine(path + "\\Game\\interface\\videos\\" + "360legalsplash.vib")))
+            {
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "360legalsplash.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "esrb.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "gslogo.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "legalsplash.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "legalsplashnonus.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "legal_360_nonus.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "legal_pc_nonus.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "monolithbumper.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "wbglogo2.vib"));
+                File.Delete(Path.Combine(path + "\\Game\\interface\\videos\\" + "wblogo.vib"));
+
+                if (File.Exists(sourceDownloads))
+                {
+                    ZipFile.ExtractToDirectory(sourceDownloads, path + "\\Game\\interface\\videos\\");
+                    labelIndicator.Text = "Intro Skip Enabled";
+                    File.Delete(sourceDownloads);
+                }
+                else if (File.Exists(sourceDesktop))
+                {
+                    ZipFile.ExtractToDirectory(sourceDesktop, path + "\\Game\\interface\\videos\\");
+                    labelIndicator.Text = "Intro Skip Enabled";
+                    File.Delete(sourceDesktop);
+                }
+
+            }
+            else
+            {
+                ZipFile.ExtractToDirectory(sourceDownloads, path + "\\Game\\interface\\videos\\");
+                labelIndicator.Text = "Intro Skip Enabled";
             }
 
+            //check if videos.zip still exsits and deletes it
+            if (File.Exists(sourceDesktop))
+            {
+                File.Delete(sourceDesktop);
+            }
+            else
+            {
+                File.Delete(sourceDownloads);
+            }
         }
 
         private void CreatorLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/KASY24");
+            System.Diagnostics.Process.Start("https://github.com/KasKillo/Fear-2-Fixer");
+            labelIndicator.Text = "Thanks for checking \n my profile";
         }
     }
 }
