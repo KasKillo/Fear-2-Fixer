@@ -3,3 +3,4 @@ Fear 2 fixer is made to help players have a better experience by allowing them t
 -Custom Field Of View
 -Select Windowed or Fullscreen
 -Disable Mouse Acceleration
+-Disable Hud
