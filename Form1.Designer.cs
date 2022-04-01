@@ -45,6 +45,8 @@
             this.IntroSkipArchiveDownload = new System.Windows.Forms.Button();
             this.IntroSkipEnable = new System.Windows.Forms.Button();
             this.labelIndicator = new System.Windows.Forms.Label();
+            this.DF2NoHud = new System.Windows.Forms.Button();
+            this.EnableF2NoHud = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,16 +142,16 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(103, 25);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "Version 4";
+            this.VersionLabel.Text = "Version 5";
             // 
             // GameDirectoryLabel
             // 
             this.GameDirectoryLabel.AutoSize = true;
-            this.GameDirectoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameDirectoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GameDirectoryLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.GameDirectoryLabel.Location = new System.Drawing.Point(550, 380);
+            this.GameDirectoryLabel.Location = new System.Drawing.Point(610, 379);
             this.GameDirectoryLabel.Name = "GameDirectoryLabel";
-            this.GameDirectoryLabel.Size = new System.Drawing.Size(238, 25);
+            this.GameDirectoryLabel.Size = new System.Drawing.Size(178, 20);
             this.GameDirectoryLabel.TabIndex = 7;
             this.GameDirectoryLabel.Text = "Game Directory Not Set";
             // 
@@ -233,11 +235,35 @@
             this.labelIndicator.TabIndex = 16;
             this.labelIndicator.Text = "Select Game Directory";
             // 
+            // DF2NoHud
+            // 
+            this.DF2NoHud.Location = new System.Drawing.Point(484, 405);
+            this.DF2NoHud.Name = "DF2NoHud";
+            this.DF2NoHud.Size = new System.Drawing.Size(110, 36);
+            this.DF2NoHud.TabIndex = 17;
+            this.DF2NoHud.Text = "Download Fear 2 No Hud";
+            this.DF2NoHud.UseVisualStyleBackColor = true;
+            this.DF2NoHud.Visible = false;
+            this.DF2NoHud.Click += new System.EventHandler(this.DF2NoHud_Click);
+            // 
+            // EnableF2NoHud
+            // 
+            this.EnableF2NoHud.Location = new System.Drawing.Point(484, 363);
+            this.EnableF2NoHud.Name = "EnableF2NoHud";
+            this.EnableF2NoHud.Size = new System.Drawing.Size(110, 36);
+            this.EnableF2NoHud.TabIndex = 18;
+            this.EnableF2NoHud.Text = "Enable No Hud";
+            this.EnableF2NoHud.UseVisualStyleBackColor = true;
+            this.EnableF2NoHud.Visible = false;
+            this.EnableF2NoHud.Click += new System.EventHandler(this.EnableF2NoHud_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.EnableF2NoHud);
+            this.Controls.Add(this.DF2NoHud);
             this.Controls.Add(this.labelIndicator);
             this.Controls.Add(this.IntroSkipEnable);
             this.Controls.Add(this.IntroSkipArchiveDownload);
@@ -284,6 +310,8 @@
         private System.Windows.Forms.Button IntroSkipArchiveDownload;
         private System.Windows.Forms.Button IntroSkipEnable;
         private System.Windows.Forms.Label labelIndicator;
+        private System.Windows.Forms.Button DF2NoHud;
+        private System.Windows.Forms.Button EnableF2NoHud;
     }
 }
 

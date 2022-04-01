@@ -69,6 +69,8 @@ namespace Fear2Pc
                     MouseFixDownload.Visible = true;
                     IntroSkipArchiveDownload.Visible = true;
                     IntroSkipEnable.Visible = true;
+                    DF2NoHud.Visible = true;
+                    EnableF2NoHud.Visible = true;
                     labelIndicator.Text = "Select a fix";
                 }
 
@@ -113,7 +115,7 @@ namespace Fear2Pc
             var sourceDownloads = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + "Downloads" + "\\X3DAudio1_5.dll";
             if((!File.Exists(sourceDesktop)) && !File.Exists(sourceDownloads))
             {
-                System.Diagnostics.Process.Start("https://download1495.mediafire.com/hdnat9tjz4yg/91xrtfdy9wcrnb0/X3DAudio1_5.dll");
+                System.Diagnostics.Process.Start("https://cdn-106.anonfiles.com/170fB9S6x4/7f047f97-1648820874/X3DAudio1_5.dll");
             }
             else
             {
@@ -150,7 +152,7 @@ namespace Fear2Pc
 
             if(!File.Exists(sourceDesktop) && !File.Exists(sourceDownloads))
             {
-                System.Diagnostics.Process.Start("https://download1488.mediafire.com/5tj4pf4fk6cg/0az8qrtjo0lf4wp/videos.zip");
+                System.Diagnostics.Process.Start("https://cdn-131.anonfiles.com/T7zdB7S1xd/f848b6aa-1648820898/videos.zip");
             }
             else
             {
@@ -215,6 +217,42 @@ namespace Fear2Pc
         {
             System.Diagnostics.Process.Start("https://github.com/KasKillo/Fear-2-Fixer");
             labelIndicator.Text = "Thanks for checking \n my profile";
+        }
+
+        private void DF2NoHud_Click(object sender, EventArgs e)
+        {
+            var sourceDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Fear2NoHud.zip";
+            var sourceDownloads = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + "Downloads" + "\\Fear2NoHud.zip";
+
+            if (!File.Exists(sourceDesktop) && !File.Exists(sourceDownloads))
+            {
+                System.Diagnostics.Process.Start("https://cdn-145.anonfiles.com/rbE4B3S4x5/683f753a-1648821770/Fear2NoHud.zip");
+            }
+            else
+            {
+                labelIndicator.Text = "No Hud mod available";
+            }
+        }
+
+        private void EnableF2NoHud_Click(object sender, EventArgs e)
+        {
+            var sourceDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Fear2NoHud.zip";
+            var sourceDownloads = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + "Downloads" + "\\Fear2NoHud.zip";
+
+            if (File.Exists(sourceDownloads))
+            {
+                ZipFile.ExtractToDirectory(sourceDownloads, path);
+                labelIndicator.Text = "No Hud Enabled";
+                File.Delete(sourceDownloads);
+            }
+            else if (File.Exists(sourceDesktop))
+            {
+                ZipFile.ExtractToDirectory(sourceDesktop, path);
+                labelIndicator.Text = "No Hud Enabled";
+                File.Delete(sourceDesktop);
+            }
+
+
         }
     }
 }
