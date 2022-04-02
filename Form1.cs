@@ -45,6 +45,7 @@ namespace Fear2Pc
             CreatorLabel.ForeColor = Color.White;
             labelIndicator.Parent = BackgroundImage;
             labelIndicator.ForeColor = Color.White;
+            GameDirectoryLabel.ForeColor = Color.Red;
         }
 
         private void GDButton_Click(object sender, EventArgs e)
@@ -59,10 +60,12 @@ namespace Fear2Pc
                 if (path == "")
                 {
                     GameDirectoryLabel.Text = "Game Directory Not Set";
+                    GameDirectoryLabel.ForeColor = Color.Red;
                 }
                 else
                 {
-                    GameDirectoryLabel.Text = path;
+                    GameDirectoryLabel.Text = "Game Directory Set";
+                    GameDirectoryLabel.ForeColor = Color.Green;
                     CreateCFG.Visible = true;
                     MouseFixDownload.Visible = true;
                     EnableMAFix.Visible = true;
@@ -238,19 +241,30 @@ namespace Fear2Pc
         {
             var sourceDesktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Fear2NoHud.zip";
             var sourceDownloads = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + "Downloads" + "\\Fear2NoHud.zip";
+            var ShaderFolder = new DirectoryInfo(Path.Combine(path + "\\Shaderoverride"));
 
-            if (File.Exists(sourceDownloads))
+            if (!File.Exists(path + "\\d3d9.dll"))
             {
-                ZipFile.ExtractToDirectory(sourceDownloads, path);
-                labelIndicator.Text = "No Hud Enabled";
-                File.Delete(sourceDownloads);
+                if (File.Exists(sourceDownloads))
+                {
+                    ZipFile.ExtractToDirectory(sourceDownloads, path);
+                    labelIndicator.Text = "No Hud Enabled";
+                    File.Delete(sourceDownloads);
+                }
+                else if (File.Exists(sourceDesktop))
+                {
+                    ZipFile.ExtractToDirectory(sourceDesktop, path);
+                    labelIndicator.Text = "No Hud Enabled";
+                    File.Delete(sourceDesktop);
+                }
             }
-            else if (File.Exists(sourceDesktop))
+            else
             {
-                ZipFile.ExtractToDirectory(sourceDesktop, path);
-                labelIndicator.Text = "No Hud Enabled";
-                File.Delete(sourceDesktop);
+                ShaderFolder.Delete(true);
+                File.Delete(path + "\\d3d9.dll");
+                labelIndicator.Text = "No Hud Deleted \n from the game";
             }
+
 
 
         }

@@ -142,16 +142,16 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(103, 25);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "Version 5";
+            this.VersionLabel.Text = "Version 6";
             // 
             // GameDirectoryLabel
             // 
             this.GameDirectoryLabel.AutoSize = true;
-            this.GameDirectoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GameDirectoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GameDirectoryLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.GameDirectoryLabel.Location = new System.Drawing.Point(610, 379);
+            this.GameDirectoryLabel.Location = new System.Drawing.Point(600, 379);
             this.GameDirectoryLabel.Name = "GameDirectoryLabel";
-            this.GameDirectoryLabel.Size = new System.Drawing.Size(178, 20);
+            this.GameDirectoryLabel.Size = new System.Drawing.Size(200, 20);
             this.GameDirectoryLabel.TabIndex = 7;
             this.GameDirectoryLabel.Text = "Game Directory Not Set";
             // 
@@ -215,11 +215,12 @@
             // 
             // IntroSkipEnable
             // 
+            this.IntroSkipEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IntroSkipEnable.Location = new System.Drawing.Point(368, 363);
             this.IntroSkipEnable.Name = "IntroSkipEnable";
             this.IntroSkipEnable.Size = new System.Drawing.Size(110, 36);
             this.IntroSkipEnable.TabIndex = 15;
-            this.IntroSkipEnable.Text = "Enable Intro Skip";
+            this.IntroSkipEnable.Text = "Enable Intro Skip(cant be disabled)";
             this.IntroSkipEnable.UseVisualStyleBackColor = true;
             this.IntroSkipEnable.Visible = false;
             this.IntroSkipEnable.Click += new System.EventHandler(this.IntroSkipEnable_Click);
@@ -252,8 +253,9 @@
             this.EnableF2NoHud.Name = "EnableF2NoHud";
             this.EnableF2NoHud.Size = new System.Drawing.Size(110, 36);
             this.EnableF2NoHud.TabIndex = 18;
-            this.EnableF2NoHud.Text = "Enable No Hud";
+            this.EnableF2NoHud.Text = "Toggle No Hud";
             this.EnableF2NoHud.UseVisualStyleBackColor = true;
+            this.EnableF2NoHud.UseWaitCursor = true;
             this.EnableF2NoHud.Visible = false;
             this.EnableF2NoHud.Click += new System.EventHandler(this.EnableF2NoHud_Click);
             // 
