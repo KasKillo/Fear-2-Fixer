@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
-
+using System.Diagnostics;
 
 namespace Fear2Pc
 {
@@ -46,6 +46,11 @@ namespace Fear2Pc
             labelIndicator.Parent = BackgroundImage;
             labelIndicator.ForeColor = Color.White;
             GameDirectoryLabel.ForeColor = Color.Red;
+            FovLabel.Visible = false;
+            FovInput.Visible = false;
+            WindowedLabel.Visible = false;
+            WYes.Visible = false;
+            WNo.Visible = false;
         }
 
         private void GDButton_Click(object sender, EventArgs e)
@@ -62,7 +67,7 @@ namespace Fear2Pc
                     GameDirectoryLabel.Text = "Game Directory Not Set";
                     GameDirectoryLabel.ForeColor = Color.Red;
                 }
-                else
+                else if(File.Exists(path + "\\FEAR2.exe"))
                 {
                     GameDirectoryLabel.Text = "Game Directory Set";
                     GameDirectoryLabel.ForeColor = Color.Green;
@@ -74,6 +79,11 @@ namespace Fear2Pc
                     IntroSkipEnable.Visible = true;
                     DF2NoHud.Visible = true;
                     EnableF2NoHud.Visible = true;
+                    FovLabel.Visible = true;
+                    FovInput.Visible = true;
+                    WindowedLabel.Visible = true;
+                    WYes.Visible = true;
+                    WNo.Visible = true;
                     labelIndicator.Text = "Select a fix";
                 }
 
@@ -265,8 +275,12 @@ namespace Fear2Pc
                 labelIndicator.Text = "No Hud Deleted \n from the game";
             }
 
+        }
 
-
+        private void StartGame_Click(object sender, EventArgs e)
+        {
+            Process.Start(Path.Combine(path + "\\FEAR2.exe"));
+            labelIndicator.Text = "Started F.E.A.R. 2";
         }
     }
 }

@@ -47,16 +47,17 @@
             this.labelIndicator = new System.Windows.Forms.Label();
             this.DF2NoHud = new System.Windows.Forms.Button();
             this.EnableF2NoHud = new System.Windows.Forms.Button();
+            this.StartGame = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundImage)).BeginInit();
             this.SuspendLayout();
             // 
             // FovInput
             // 
             this.FovInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FovInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FovInput.Location = new System.Drawing.Point(72, 312);
+            this.FovInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FovInput.Location = new System.Drawing.Point(630, 412);
             this.FovInput.Name = "FovInput";
-            this.FovInput.Size = new System.Drawing.Size(82, 26);
+            this.FovInput.Size = new System.Drawing.Size(55, 25);
             this.FovInput.TabIndex = 1;
             this.FovInput.Text = "80";
             this.FovInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DIGIT_ONLY);
@@ -65,22 +66,23 @@
             // 
             this.FovLabel.AutoSize = true;
             this.FovLabel.BackColor = System.Drawing.Color.Transparent;
-            this.FovLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FovLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.FovLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FovLabel.Location = new System.Drawing.Point(12, 312);
+            this.FovLabel.Location = new System.Drawing.Point(504, 415);
             this.FovLabel.Name = "FovLabel";
-            this.FovLabel.Size = new System.Drawing.Size(54, 25);
+            this.FovLabel.Size = new System.Drawing.Size(120, 20);
             this.FovLabel.TabIndex = 2;
-            this.FovLabel.Text = "Fov:";
+            this.FovLabel.Text = "Field Of View:";
             // 
             // WYes
             // 
             this.WYes.AutoSize = true;
             this.WYes.BackColor = System.Drawing.Color.Transparent;
+            this.WYes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WYes.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.WYes.Location = new System.Drawing.Point(136, 351);
+            this.WYes.Location = new System.Drawing.Point(630, 443);
             this.WYes.Name = "WYes";
-            this.WYes.Size = new System.Drawing.Size(43, 17);
+            this.WYes.Size = new System.Drawing.Size(55, 24);
             this.WYes.TabIndex = 3;
             this.WYes.Text = "Yes";
             this.WYes.UseVisualStyleBackColor = false;
@@ -90,10 +92,11 @@
             this.WNo.AutoSize = true;
             this.WNo.BackColor = System.Drawing.Color.Transparent;
             this.WNo.Checked = true;
+            this.WNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WNo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.WNo.Location = new System.Drawing.Point(185, 351);
+            this.WNo.Location = new System.Drawing.Point(693, 443);
             this.WNo.Name = "WNo";
-            this.WNo.Size = new System.Drawing.Size(39, 17);
+            this.WNo.Size = new System.Drawing.Size(47, 24);
             this.WNo.TabIndex = 4;
             this.WNo.TabStop = true;
             this.WNo.Text = "No";
@@ -103,17 +106,17 @@
             // 
             this.WindowedLabel.AutoSize = true;
             this.WindowedLabel.BackColor = System.Drawing.Color.Transparent;
-            this.WindowedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.WindowedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.WindowedLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.WindowedLabel.Location = new System.Drawing.Point(12, 351);
+            this.WindowedLabel.Location = new System.Drawing.Point(518, 446);
             this.WindowedLabel.Name = "WindowedLabel";
-            this.WindowedLabel.Size = new System.Drawing.Size(118, 25);
+            this.WindowedLabel.Size = new System.Drawing.Size(106, 24);
             this.WindowedLabel.TabIndex = 5;
             this.WindowedLabel.Text = "Windowed:";
             // 
             // GDButton
             // 
-            this.GDButton.Location = new System.Drawing.Point(12, 405);
+            this.GDButton.Location = new System.Drawing.Point(13, 515);
             this.GDButton.Name = "GDButton";
             this.GDButton.Size = new System.Drawing.Size(110, 36);
             this.GDButton.TabIndex = 6;
@@ -127,7 +130,7 @@
             this.BackgroundImage.Image = global::Fear2Pc.Properties.Resources.external_content_duckduckgo_com;
             this.BackgroundImage.Location = new System.Drawing.Point(-2, -1);
             this.BackgroundImage.Name = "BackgroundImage";
-            this.BackgroundImage.Size = new System.Drawing.Size(810, 461);
+            this.BackgroundImage.Size = new System.Drawing.Size(993, 562);
             this.BackgroundImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BackgroundImage.TabIndex = 8;
             this.BackgroundImage.TabStop = false;
@@ -138,18 +141,18 @@
             this.VersionLabel.BackColor = System.Drawing.Color.Transparent;
             this.VersionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VersionLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.VersionLabel.Location = new System.Drawing.Point(685, 416);
+            this.VersionLabel.Location = new System.Drawing.Point(869, 9);
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(103, 25);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "Version 6";
+            this.VersionLabel.Text = "Version 7";
             // 
             // GameDirectoryLabel
             // 
             this.GameDirectoryLabel.AutoSize = true;
             this.GameDirectoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GameDirectoryLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.GameDirectoryLabel.Location = new System.Drawing.Point(600, 379);
+            this.GameDirectoryLabel.Location = new System.Drawing.Point(8, 48);
             this.GameDirectoryLabel.Name = "GameDirectoryLabel";
             this.GameDirectoryLabel.Size = new System.Drawing.Size(200, 20);
             this.GameDirectoryLabel.TabIndex = 7;
@@ -157,7 +160,7 @@
             // 
             // CreateCFG
             // 
-            this.CreateCFG.Location = new System.Drawing.Point(136, 405);
+            this.CreateCFG.Location = new System.Drawing.Point(514, 473);
             this.CreateCFG.Name = "CreateCFG";
             this.CreateCFG.Size = new System.Drawing.Size(110, 36);
             this.CreateCFG.TabIndex = 10;
@@ -168,7 +171,7 @@
             // 
             // MouseFixDownload
             // 
-            this.MouseFixDownload.Location = new System.Drawing.Point(252, 405);
+            this.MouseFixDownload.Location = new System.Drawing.Point(630, 515);
             this.MouseFixDownload.Name = "MouseFixDownload";
             this.MouseFixDownload.Size = new System.Drawing.Size(110, 36);
             this.MouseFixDownload.TabIndex = 11;
@@ -179,7 +182,7 @@
             // 
             // EnableMAFix
             // 
-            this.EnableMAFix.Location = new System.Drawing.Point(252, 363);
+            this.EnableMAFix.Location = new System.Drawing.Point(630, 473);
             this.EnableMAFix.Name = "EnableMAFix";
             this.EnableMAFix.Size = new System.Drawing.Size(110, 36);
             this.EnableMAFix.TabIndex = 12;
@@ -204,7 +207,7 @@
             // 
             // IntroSkipArchiveDownload
             // 
-            this.IntroSkipArchiveDownload.Location = new System.Drawing.Point(368, 405);
+            this.IntroSkipArchiveDownload.Location = new System.Drawing.Point(746, 515);
             this.IntroSkipArchiveDownload.Name = "IntroSkipArchiveDownload";
             this.IntroSkipArchiveDownload.Size = new System.Drawing.Size(110, 36);
             this.IntroSkipArchiveDownload.TabIndex = 14;
@@ -216,7 +219,7 @@
             // IntroSkipEnable
             // 
             this.IntroSkipEnable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IntroSkipEnable.Location = new System.Drawing.Point(368, 363);
+            this.IntroSkipEnable.Location = new System.Drawing.Point(746, 473);
             this.IntroSkipEnable.Name = "IntroSkipEnable";
             this.IntroSkipEnable.Size = new System.Drawing.Size(110, 36);
             this.IntroSkipEnable.TabIndex = 15;
@@ -230,7 +233,7 @@
             this.labelIndicator.AutoSize = true;
             this.labelIndicator.BackColor = System.Drawing.Color.Transparent;
             this.labelIndicator.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIndicator.Location = new System.Drawing.Point(561, 9);
+            this.labelIndicator.Location = new System.Drawing.Point(745, 48);
             this.labelIndicator.Name = "labelIndicator";
             this.labelIndicator.Size = new System.Drawing.Size(227, 25);
             this.labelIndicator.TabIndex = 16;
@@ -238,7 +241,7 @@
             // 
             // DF2NoHud
             // 
-            this.DF2NoHud.Location = new System.Drawing.Point(484, 405);
+            this.DF2NoHud.Location = new System.Drawing.Point(862, 513);
             this.DF2NoHud.Name = "DF2NoHud";
             this.DF2NoHud.Size = new System.Drawing.Size(110, 36);
             this.DF2NoHud.TabIndex = 17;
@@ -249,7 +252,7 @@
             // 
             // EnableF2NoHud
             // 
-            this.EnableF2NoHud.Location = new System.Drawing.Point(484, 363);
+            this.EnableF2NoHud.Location = new System.Drawing.Point(862, 473);
             this.EnableF2NoHud.Name = "EnableF2NoHud";
             this.EnableF2NoHud.Size = new System.Drawing.Size(110, 36);
             this.EnableF2NoHud.TabIndex = 18;
@@ -259,11 +262,23 @@
             this.EnableF2NoHud.Visible = false;
             this.EnableF2NoHud.Click += new System.EventHandler(this.EnableF2NoHud_Click);
             // 
+            // StartGame
+            // 
+            this.StartGame.Location = new System.Drawing.Point(13, 473);
+            this.StartGame.Name = "StartGame";
+            this.StartGame.Size = new System.Drawing.Size(110, 36);
+            this.StartGame.TabIndex = 19;
+            this.StartGame.Text = "Play F.E.A.R. 2";
+            this.StartGame.UseVisualStyleBackColor = true;
+            this.StartGame.UseWaitCursor = true;
+            this.StartGame.Click += new System.EventHandler(this.StartGame_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.StartGame);
             this.Controls.Add(this.EnableF2NoHud);
             this.Controls.Add(this.DF2NoHud);
             this.Controls.Add(this.labelIndicator);
@@ -314,6 +329,7 @@
         private System.Windows.Forms.Label labelIndicator;
         private System.Windows.Forms.Button DF2NoHud;
         private System.Windows.Forms.Button EnableF2NoHud;
+        private System.Windows.Forms.Button StartGame;
     }
 }
 
