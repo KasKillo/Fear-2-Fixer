@@ -145,7 +145,7 @@
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(103, 25);
             this.VersionLabel.TabIndex = 9;
-            this.VersionLabel.Text = "Version 7";
+            this.VersionLabel.Text = "Version 8";
             // 
             // GameDirectoryLabel
             // 

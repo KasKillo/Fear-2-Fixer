@@ -17,7 +17,6 @@ namespace Fear2Pc
     public partial class Form1 : Form
     {
         string path = "";
-        string MouseFixUrl = "https://download1495.mediafire.com/hdnat9tjz4yg/91xrtfdy9wcrnb0/X3DAudio1_5.dll";
        
 
         public Form1()
@@ -51,6 +50,8 @@ namespace Fear2Pc
             WindowedLabel.Visible = false;
             WYes.Visible = false;
             WNo.Visible = false;
+            VersionLabel.Text = "Version 8";
+            StartGame.Visible = false;
         }
 
         private void GDButton_Click(object sender, EventArgs e)
@@ -85,6 +86,7 @@ namespace Fear2Pc
                     WYes.Visible = true;
                     WNo.Visible = true;
                     labelIndicator.Text = "Select a fix";
+                    StartGame.Visible = true;
                 }
 
                 Console.WriteLine(folderbrowserdialog.SelectedPath);
@@ -128,7 +130,7 @@ namespace Fear2Pc
             var sourceDownloads = Environment.GetEnvironmentVariable("USERPROFILE") + @"\" + "Downloads" + "\\X3DAudio1_5.dll";
             if((!File.Exists(sourceDesktop)) && !File.Exists(sourceDownloads))
             {
-                System.Diagnostics.Process.Start("https://cdn-106.anonfiles.com/170fB9S6x4/7f047f97-1648820874/X3DAudio1_5.dll");
+                System.Diagnostics.Process.Start("https://community.pcgamingwiki.com/files/file/932-fear-2-mouse-fix/");
             }
             else
             {
@@ -148,13 +150,22 @@ namespace Fear2Pc
            if(File.Exists(sourceDesktop))
            {
                 File.Move(sourceDesktop, destination);
-           }
+                labelIndicator.Text = "Mouse Fix enabled";
+                labelIndicator.ForeColor = Color.Green;
+            }
            else if(File.Exists(sourceDownloads))
            {
                 File.Move(sourceDownloads, destination);
-           }
+                labelIndicator.Text = "Mouse Fix enabled";
+                labelIndicator.ForeColor = Color.Green;
+            }
+            else
+            {
+                labelIndicator.Text = "Mouse Fix not found";
+                labelIndicator.ForeColor = Color.Red;
+            }
 
-            labelIndicator.Text = "Mouse Fix enabled";
+            
 
         }
 
@@ -165,7 +176,7 @@ namespace Fear2Pc
 
             if(!File.Exists(sourceDesktop) && !File.Exists(sourceDownloads))
             {
-                System.Diagnostics.Process.Start("https://cdn-131.anonfiles.com/T7zdB7S1xd/f848b6aa-1648820898/videos.zip");
+                System.Diagnostics.Process.Start("https://community.pcgamingwiki.com/files/file/738-fear-2-skip-intro/");
             }
             else
             {
@@ -198,14 +209,21 @@ namespace Fear2Pc
                 if (File.Exists(sourceDownloads))
                 {
                     ZipFile.ExtractToDirectory(sourceDownloads, path + "\\Game\\interface\\videos\\");
-                    labelIndicator.Text = "Intro Skip Enabled";
                     File.Delete(sourceDownloads);
+                    labelIndicator.Text = "Intro Skip Enabled";
+                    labelIndicator.ForeColor = Color.Green;
                 }
                 else if (File.Exists(sourceDesktop))
                 {
                     ZipFile.ExtractToDirectory(sourceDesktop, path + "\\Game\\interface\\videos\\");
-                    labelIndicator.Text = "Intro Skip Enabled";
                     File.Delete(sourceDesktop);
+                    labelIndicator.Text = "Intro Skip Enabled";
+                    labelIndicator.ForeColor = Color.Green;
+                }
+                else if(!File.Exists(sourceDesktop) && !File.Exists(sourceDownloads))
+                {
+                    labelIndicator.Text = "Intro Skip Not Found";
+                    labelIndicator.ForeColor = Color.Red;
                 }
 
             }
@@ -239,7 +257,7 @@ namespace Fear2Pc
 
             if (!File.Exists(sourceDesktop) && !File.Exists(sourceDownloads))
             {
-                System.Diagnostics.Process.Start("https://cdn-145.anonfiles.com/rbE4B3S4x5/683f753a-1648821770/Fear2NoHud.zip");
+                System.Diagnostics.Process.Start("https://www.mediafire.com/file/2y6segj8qey3tb8/Fear2noHUD.zip/file");
             }
             else
             {
@@ -258,14 +276,21 @@ namespace Fear2Pc
                 if (File.Exists(sourceDownloads))
                 {
                     ZipFile.ExtractToDirectory(sourceDownloads, path);
-                    labelIndicator.Text = "No Hud Enabled";
                     File.Delete(sourceDownloads);
+                    labelIndicator.Text = "No Hud Enabled";
+                    labelIndicator.ForeColor = Color.Green;
                 }
                 else if (File.Exists(sourceDesktop))
                 {
                     ZipFile.ExtractToDirectory(sourceDesktop, path);
-                    labelIndicator.Text = "No Hud Enabled";
                     File.Delete(sourceDesktop);
+                    labelIndicator.Text = "No Hud Enabled";
+                    labelIndicator.ForeColor = Color.Green;
+                }
+                else if(!File.Exists(sourceDesktop) && !File.Exists(sourceDownloads))
+                {
+                    labelIndicator.Text = "No Hud Mod not found";
+                    labelIndicator.ForeColor = Color.Red;
                 }
             }
             else
@@ -273,6 +298,7 @@ namespace Fear2Pc
                 ShaderFolder.Delete(true);
                 File.Delete(path + "\\d3d9.dll");
                 labelIndicator.Text = "No Hud Deleted \n from the game";
+                labelIndicator.ForeColor = Color.Green;
             }
 
         }
@@ -281,6 +307,7 @@ namespace Fear2Pc
         {
             Process.Start(Path.Combine(path + "\\FEAR2.exe"));
             labelIndicator.Text = "Started F.E.A.R. 2";
+            labelIndicator.ForeColor = Color.Green;
         }
     }
 }
